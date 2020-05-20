@@ -1,6 +1,8 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  node: circleci/node:10
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
 jobs:
   build-and-test:
     executor:
@@ -9,9 +11,18 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
-            - run: npm test
+            - run: npm install typescript
+            - sonarcloud/scan
+            - run:
+                command: |
+                  STATUS=$(curl -u "${SONAR_TOKEN}:" https://sonarcloud.io/api/qualitygates/project_status?projectKey=kura2020_public2 | jq -r '.projectStatus.status')
+                  echo "Status of SonarQube task is ${STATUS} "
+                  if [ "${STATUS}" != "OK" ]; then
+                      echo "Quality gate is not OK - exiting with error"
+                      # exit 1
+                  fi
 workflows:
     build-and-test:
       jobs:
         - build-and-test
+            context: sonarcloud
