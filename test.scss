@@ -84,7 +84,11 @@
     padding: 0;
     box-shadow: none;
     *zoom: 1;
-    padding: 9px 28px 3px;
+    //padding: 9px 28px 3px;
+    padding-top: 9px;
+    padding-right: 28px;
+    padding-left: 28px;
+    padding-bottom: 3px;
     position: relative;
   }
 }
