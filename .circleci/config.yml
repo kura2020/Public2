@@ -8,7 +8,7 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - run: npm install typescript
+      - run: npm install typescript@3.7.2
       - sonarcloud/scan
       - run:
           command: |
