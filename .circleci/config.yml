@@ -8,10 +8,9 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: 
-          command: | 
-             npm install selenium-side-runner
-             selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars,headless]" TEST2.side    
+      - run: npm install chromedriver
+      - run: npm install selenium-side-runner
+      - run: selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars,headless]" TEST2.side    
 #      - run: npm install typescript@3.7.2
 #      - sonarcloud/scan
 #      - run:
