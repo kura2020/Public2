@@ -8,18 +8,19 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: npm install typescript@3.7.2
-      - sonarcloud/scan
-      - run:
-          command: |
-            STATUS=$(curl -u "${SONAR_TOKEN}:" https://sonarcloud.io/api/qualitygates/project_status?projectKey=kura2020_public2 | jq -r '.projectStatus.status')
-            echo "Status of SonarQube task is ${STATUS} "
-            if [ "${STATUS}" != "OK" ]; then
-                echo "Quality gate is not OK - exiting with error"
-                # exit 1
-            fi
-workflows:
-    build-and-test:
-      jobs:
-        - build-and-test:
-            context: sonarcloud
+      - run npm install -g selenium-side-runner
+#      - run: npm install typescript@3.7.2
+#      - sonarcloud/scan
+#      - run:
+#          command: |
+#            STATUS=$(curl -u "${SONAR_TOKEN}:" https://sonarcloud.io/api/qualitygates/project_status?projectKey=kura2020_public2 | jq -r '.projectStatus.status')
+#            echo "Status of SonarQube task is ${STATUS} "
+#            if [ "${STATUS}" != "OK" ]; then
+#                echo "Quality gate is not OK - exiting with error"
+#                # exit 1
+#            fi
+#workflows:
+#    build-and-test:
+#      jobs:
+#        - build-and-test:
+#            context: sonarcloud
