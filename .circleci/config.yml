@@ -8,7 +8,7 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: npm install -g selenium-side-runner
+      - run: npm install selenium-side-runner
 #      - run: npm install typescript@3.7.2
 #      - sonarcloud/scan
 #      - run:
