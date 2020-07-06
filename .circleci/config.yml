@@ -8,9 +8,7 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: echo $PATH
-      - run: npm install chromedriver
-      - run: echo $PATH
+#      - run: npm install chromedriver
       - run: npm install selenium-side-runner
       - run: sudo npm link selenium-side-runner
       - run: selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars,headless]" TEST2.side    
