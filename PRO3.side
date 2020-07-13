@@ -1,0 +1,72 @@
+{
+  "id": "47d4e1fb-9507-4ea2-87df-3f2b960e2a77",
+  "version": "2.0",
+  "name": "PRO３",
+  "url": "https://www.google.co.jp",
+  "tests": [{
+    "id": "1c06aded-d396-4255-852d-5fe7a7ad1e27",
+    "name": "abe",
+    "commands": [{
+      "id": "78e1b418-2fdb-44ca-b6be-c0a7469876b9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cdbd301-2c99-464f-a04b-3d156807dc42",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1619x943",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ad9c43d-479a-44c2-a4ec-d993a3e8b469",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.gLFyf", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "アメリカ"
+    }, {
+      "id": "b6092141-9ebe-454e-bfc2-3972d4569984",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sbhl span",
+      "targets": [
+        ["css=.sbhl span", "css:finder"],
+        ["xpath=//form[@id='tsf']/div[2]/div/div[2]/div[2]/ul/li/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'アベノマスク')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e989abfb-ff72-445f-b92c-4c812abb75f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.g:nth-child(2) .LC20lb",
+      "targets": [
+        ["css=.g:nth-child(2) .LC20lb", "css:finder"],
+        ["xpath=//div[@id='rso']/div/div/div/a/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'アベノマスク - Wikipedia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "24551998-7f63-4ffd-ab44-e70c70250cd6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1c06aded-d396-4255-852d-5fe7a7ad1e27"]
+  }],
+  "urls": ["https://www.google.co.jp/"],
+  "plugins": []
+}
