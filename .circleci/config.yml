@@ -3,7 +3,7 @@ orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
 
 jobs:
-  build-and-test:
+  build:
     docker:
       - image: circleci/node:10-browsers
     steps:
@@ -27,11 +27,8 @@ jobs:
       - run: curl ifconfig.me    
 
 
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-
 workflows:
-    build-and-test:
+    build:
       jobs:
         - build-and-test:
             context: sonarcloud
